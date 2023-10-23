@@ -9,7 +9,14 @@ int main() {
     printf("Enter the number of expenses: ");
     scanf("%d", &expenses);
 
+    // shows the values the user inputted
     printf("Budget = ₱%.2f \n", budget);
-    printf("Expenses = %d \n", expenses);
+    print("Expenses = %d \n", expenses);
+
+    // code for inputting each of the expenses
+    // code for summing up the total expenses
+    // code for showing if the user is over/under budget
+    // code for the remainder
+    // code for the percentage of each expense
 
 }
