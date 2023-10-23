@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    float budget;
+    int expenses;
+
+    printf("Enter your budget: ₱");
+    scanf("%f", &budget);
+    printf("Enter the number of expenses: ");
+    scanf("%d", &expenses);
+
+    printf("Budget = ₱%.2f \n", budget);
+    printf("Expenses = %d \n", expenses);
+
+}
