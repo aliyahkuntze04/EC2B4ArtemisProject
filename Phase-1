@@ -1,0 +1,15 @@
+function budgetManager()
+    overallBudget = input('Enter your overall budget for the month: ₱');
+    numExpenses = input('Enter the number of expenses: ');
+    expensePrices = zeros(1, numExpenses);
+    expenseCategories = cell(1, numExpenses);
+    
+    for i = 1:numExpenses
+        fprintf('Enter information for expense %d:\n', i);
+        expensePrices(i) = input('Enter the expense amount: ₱');
+        expenseCategories{i} = input('Enter the expense category: ', 's');
+    end
+
+    totalExpenses = sum(expensePrices);
+    remainingBudget = overallBudget - totalExpenses;
+end
