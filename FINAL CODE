@@ -1,0 +1,42 @@
+function budgetManager()
+    % gets the overall budget
+    overallBudget = input('Enter your overall budget for the month: ₱');
+    
+    % gets the number of expenses
+    numExpenses = input('Enter the number of expenses: ');
+    
+    expensePrices = zeros(1, numExpenses);
+    expenseCategories = cell(1, numExpenses);
+    
+    % gets what the expenses will be 
+    for i = 1:numExpenses
+        fprintf('Enter information for expense %d:\n', i);
+        expenseCategories{i} = input('Enter the expense category: ', 's');
+        expensePrices(i) = input('Enter the expense amount: ₱');
+    end
+    
+    % calculates total expenses
+    totalExpenses = sum(expensePrices);
+    
+    % calculates remaining budget
+    remainingBudget = overallBudget - totalExpenses;
+    
+    % displays budget status
+    fprintf('\nBudget Status:\n');
+    if remainingBudget >= 0
+        fprintf('You are under the budget!\n');
+    else
+        fprintf('You are over the budget.\n');
+    end
+    fprintf('Remaining Budget: ₱%.2f\n', remainingBudget);
+    
+    % calculates and displays expense category percentages
+    fprintf('\nExpense Category Percentages:\n');
+    uniqueCategories = unique(expenseCategories);
+    for i = 1:length(uniqueCategories)
+        category = uniqueCategories{i};
+        categoryExpenses = expensePrices(strcmp(expenseCategories, category));
+        categoryPercentage = sum(categoryExpenses) / totalExpenses * 100;
+        fprintf('%s: %.2f%%\n', category, categoryPercentage);
+    end
+end
